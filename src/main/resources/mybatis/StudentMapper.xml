@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.javaguest.studentws.dao.StudentMapper" >
+
+    <resultMap id="baseResultMap" type="com.javaguest.studentws.domain.StudentDO" >
+        <id column="STUDENT_ID" property="id" jdbcType="INTEGER" />
+        <result column="FIRST_NAME" property="firstName" jdbcType="VARCHAR" />
+        <result column="LAST_NAME" property="lastName" jdbcType="VARCHAR" />
+    </resultMap>
+
+    <select id="findByPage" resultMap="baseResultMap">
+        select * from Student
+    </select>
+    
+    <insert id="saveStudent" parameterType="StudentDO" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO Student(FIRST_NAME, LAST_NAME)
+        VALUES(#{firstName}, #{lastName})
+    </insert>
+    
+</mapper>
