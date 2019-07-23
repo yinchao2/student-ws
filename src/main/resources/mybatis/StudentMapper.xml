@@ -12,6 +12,10 @@
         select * from Student
     </select>
     
+    <select id="findAllStudents" resultMap="baseResultMap">
+        select * from Student
+    </select>
+    
     <insert id="saveStudent" parameterType="StudentDO" keyProperty="id" useGeneratedKeys="true">
         INSERT INTO Student(FIRST_NAME, LAST_NAME)
         VALUES(#{firstName}, #{lastName})

@@ -1,5 +1,7 @@
 package com.javaguest.studentws.dao;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.github.pagehelper.Page;
@@ -11,4 +13,6 @@ public interface StudentMapper {
 	Page<StudentDO> findByPage();
 	
 	void saveStudent(StudentDO student);
+	
+	List<StudentDO> findAllStudents();
 }

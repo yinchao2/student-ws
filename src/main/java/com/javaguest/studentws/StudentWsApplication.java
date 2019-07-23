@@ -4,11 +4,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.cache.annotation.EnableCaching;
 
 import com.javaguest.studentws.domain.StudentDO;
-import com.javaguest.studentws.service.StudentService;
+import com.javaguest.studentws.service.impl.StudentServiceImpl;
 
 @SpringBootApplication
+//@EnableCaching
 //public class StudentWsApplication implements CommandLineRunner {
 public class StudentWsApplication {
 
